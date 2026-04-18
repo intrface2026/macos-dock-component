@@ -1,3 +1,5 @@
+"use client";
+
 import { Dock } from "@/components/Dock";
 
 export default function Home() {
