@@ -24,6 +24,24 @@ export default function Home() {
           <span className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 font-medium">Premium Component Implementation</span>
           <div className="h-[1px] w-12 bg-white/10"></div>
         </div>
+
+        {/* Installation Command */}
+        <div className="pt-6">
+          <div className="group relative inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300">
+            <span className="text-xs font-mono text-white/50 tracking-tight">npx @prathameshnaidu/macos-dock</span>
+            <button 
+              onClick={() => {
+                navigator.clipboard.writeText("npx @prathameshnaidu/macos-dock");
+                const btn = document.getElementById("copy-btn");
+                if (btn) btn.innerText = "COPIED";
+                setTimeout(() => { if (btn) btn.innerText = "COPY"; }, 2000);
+              }}
+              className="px-2 py-0.5 rounded-md bg-white/10 hover:bg-white/20 text-[9px] font-bold text-white tracking-widest transition-colors cursor-pointer"
+            >
+              <span id="copy-btn">COPY</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="fixed bottom-10 left-0 right-0 z-40 flex justify-center pb-6">
