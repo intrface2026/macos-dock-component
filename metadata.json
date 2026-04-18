@@ -1,0 +1,5 @@
+{
+  "name": "macOS Dock Component",
+  "description": "A high-fidelity implementation of the macOS Dock with magnification physics using Framer Motion.",
+  "requestFramePermissions": []
+}

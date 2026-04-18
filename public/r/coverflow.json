@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "coverflow",
+  "type": "registry:component",
+  "title": "Coverflow Demo",
+  "description": "A professional card-based coverflow style showcase.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/coverflow-demo.tsx",
+      "type": "registry:component",
+      "content": "import { motion } from \"framer-motion\";\n\nconst cards = [\"Design\", \"Motion\", \"DevX\", \"UI Kits\", \"Production\"];\n\nexport function CoverflowDemo() {\n  return (\n    <div className=\"rounded-3xl border border-slate-700/80 bg-slate-900/80 p-8 shadow-2xl shadow-sky-950/40\">\n      <p className=\"mb-5 text-sm uppercase tracking-[0.18em] text-slate-400\">UI Experience Container</p>\n      <div className=\"flex flex-wrap items-center justify-center gap-5\">\n        {cards.map((card, index) => (\n          <motion.article\n            key={card}\n            className=\"h-44 w-32 rounded-2xl border border-slate-600/80 bg-gradient-to-b from-slate-700 to-slate-900 p-4\"\n            initial={{ opacity: 0, y: 16 }}\n            animate={{ opacity: 1, y: 0 }}\n            transition={{ delay: index * 0.06 }}\n          >\n            <p className=\"text-sm font-semibold text-slate-100\">{card}</p>\n          </motion.article>\n        ))}\n      </div>\n    </div>\n  );\n}\n"
+    }
+  ]
+}
