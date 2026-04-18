@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Dock } from "@/components/Dock";
 
 export default function Home() {
@@ -39,18 +40,36 @@ export default function Home() {
 
         {/* Installation Command */}
         <div className="pt-6">
-          <div className="group relative inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300">
-            <span className="text-xs font-mono text-white/50 tracking-tight">npx @prathameshnaidu/macos-dock</span>
-            <button 
-              onClick={handleCopy}
-              className="p-1.5 rounded-md bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
-            >
-              {copied ? (
-                <Check className="w-3.5 h-3.5 text-green-400" />
-              ) : (
-                <Copy className="w-3.5 h-3.5 opacity-50" />
-              )}
-            </button>
+          <div 
+            onClick={handleCopy}
+            className="group relative inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300 cursor-pointer overflow-hidden"
+          >
+            <span className="text-xs font-mono text-white/50 tracking-tight select-none">npx @prathameshnaidu/macos-dock</span>
+            <div className="relative w-4 h-4 flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                {copied ? (
+                  <motion.div
+                    key="check"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0, opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    <Check className="w-3.5 h-3.5 text-green-400" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="copy"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0, opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    <Copy className="w-3.5 h-3.5 text-white/40 group-hover:text-white/60" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </div>
