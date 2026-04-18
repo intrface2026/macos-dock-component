@@ -26,8 +26,20 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="fixed bottom-10 left-0 right-0 z-50 flex justify-center pb-6">
+      <div className="fixed bottom-10 left-0 right-0 z-40 flex justify-center pb-6">
         <Dock />
+      </div>
+
+      {/* Stable Attribution Tag */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <div className="flex flex-col items-end gap-1">
+          <span className="text-[10px] text-neutral-600 font-bold tracking-[0.3em] uppercase opacity-50">
+            Educational UI
+          </span>
+          <span className="text-[11px] text-white/50 font-medium tracking-[0.1em] bg-white/5 px-3 py-1 rounded-full border border-white/10 backdrop-blur-md shadow-2xl">
+            Crafted by Prathamesh Naidu
+          </span>
+        </div>
       </div>
     </main>
   );

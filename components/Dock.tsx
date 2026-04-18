@@ -102,26 +102,21 @@ export const Dock: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
-      <div className="flex flex-col items-center gap-3">
-        <span className="text-[10px] text-neutral-600 font-bold tracking-[0.4em] pointer-events-none uppercase bg-white/5 px-3 py-1 rounded-full border border-white/5 backdrop-blur-sm shadow-lg">
-          Crafted by Prathamesh Naidu
-        </span>
-        <motion.div
-          onMouseMove={(e: React.MouseEvent) => mouseX.set(e.pageX)}
-          onMouseLeave={() => mouseX.set(Infinity)}
-          className="pointer-events-auto flex items-end gap-3 rounded-2xl border border-white/10 bg-neutral-900/40 px-3 pb-3 pt-2 backdrop-blur-2xl shadow-2xl shadow-black/50"
-          style={{ height: 'auto' }}
-        >
-          {DOCK_ITEMS.map((item, idx) => {
-            if ('type' in item && item.type === "separator") {
-              return <div key={idx} className="h-10 w-[1px] bg-white/10 mx-1 mb-0.5 self-center"></div>;
-            }
-            
-            return <DockIcon key={idx} mouseX={mouseX} item={item as DockItemData} />;
-          })}
-        </motion.div>
-      </div>
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-auto">
+      <motion.div
+        onMouseMove={(e: React.MouseEvent) => mouseX.set(e.pageX)}
+        onMouseLeave={() => mouseX.set(Infinity)}
+        className="flex items-end gap-3 rounded-2xl border border-white/10 bg-neutral-900/40 px-3 pb-3 pt-2 backdrop-blur-2xl shadow-2xl shadow-black/50"
+        style={{ height: 'auto' }}
+      >
+        {DOCK_ITEMS.map((item, idx) => {
+          if ('type' in item && item.type === "separator") {
+            return <div key={idx} className="h-10 w-[1px] bg-white/10 mx-1 mb-0.5 self-center"></div>;
+          }
+          
+          return <DockIcon key={idx} mouseX={mouseX} item={item as DockItemData} />;
+        })}
+      </motion.div>
     </div>
   );
 };
