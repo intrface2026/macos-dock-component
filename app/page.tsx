@@ -1,8 +1,18 @@
 "use client";
 
+import { useState } from "react";
+import { Copy, Check } from "lucide-react";
 import { Dock } from "@/components/Dock";
 
 export default function Home() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("npx @prathameshnaidu/macos-dock");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <main className="min-h-screen w-full bg-[#030303] relative overflow-hidden flex flex-col items-center justify-center selection:bg-white/20">
       
@@ -32,15 +42,14 @@ export default function Home() {
           <div className="group relative inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300">
             <span className="text-xs font-mono text-white/50 tracking-tight">npx @prathameshnaidu/macos-dock</span>
             <button 
-              onClick={() => {
-                navigator.clipboard.writeText("npx @prathameshnaidu/macos-dock");
-                const btn = document.getElementById("copy-btn");
-                if (btn) btn.innerText = "COPIED";
-                setTimeout(() => { if (btn) btn.innerText = "COPY"; }, 2000);
-              }}
-              className="px-2 py-0.5 rounded-md bg-white/10 hover:bg-white/20 text-[9px] font-bold text-white tracking-widest transition-colors cursor-pointer"
+              onClick={handleCopy}
+              className="p-1.5 rounded-md bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
             >
-              <span id="copy-btn">COPY</span>
+              {copied ? (
+                <Check className="w-3.5 h-3.5 text-green-400" />
+              ) : (
+                <Copy className="w-3.5 h-3.5 opacity-50" />
+              )}
             </button>
           </div>
         </div>
