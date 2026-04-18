@@ -33,12 +33,24 @@ export default function Home() {
       {/* Stable Attribution Tag */}
       <div className="fixed bottom-6 right-6 z-50">
         <div className="flex flex-col items-end gap-1">
-          <span className="text-[10px] text-neutral-600 font-bold tracking-[0.3em] uppercase opacity-50">
-            Educational UI
-          </span>
           <span className="text-[11px] text-white/50 font-medium tracking-[0.1em] bg-white/5 px-3 py-1 rounded-full border border-white/10 backdrop-blur-md shadow-2xl">
             Crafted by Prathamesh Naidu
           </span>
+        </div>
+      </div>
+
+      {/* Device Lockout Overlay */}
+      <div className="fixed inset-0 z-[100] bg-black flex items-center justify-center lg:hidden px-6 text-center">
+        <div className="space-y-4">
+          <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+             <svg className="w-8 h-8 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+             </svg>
+          </div>
+          <h2 className="text-xl font-bold text-white tracking-tight">Desktop Only Experience</h2>
+          <p className="text-neutral-500 text-sm max-w-[240px] leading-relaxed">
+            This professional macOS dock experience is optimized specifically for laptop and desktop screens.
+          </p>
         </div>
       </div>
     </main>
