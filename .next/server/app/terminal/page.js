@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/terminal/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__00kkiek._.js")
+R.c("server/chunks/ssr/0ye2_next_dist_esm_build_templates_app-page_0xjdy82.js")
+R.c("server/chunks/ssr/[root-of-the-server]__106jnvo._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0y98s5j._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0888b27._.js")
+R.c("server/chunks/ssr/0ye2_next_dist_client_components_0ex0b.d._.js")
+R.c("server/chunks/ssr/0ye2_next_dist_client_components_builtin_forbidden_0jk_e~h.js")
+R.c("server/chunks/ssr/0ye2_next_dist_client_components_builtin_unauthorized_0hyndwc.js")
+R.c("server/chunks/ssr/macos-dock-component_app_global-error_tsx_0~~5vmg._.js")
+R.c("server/chunks/ssr/macos-dock-component__next-internal_server_app_terminal_page_actions_0p_kb4z.js")
+R.m(70661)
+module.exports=R.m(70661).exports

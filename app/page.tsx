@@ -9,7 +9,7 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("npx @prathameshnaidu/macos-dock");
+    navigator.clipboard.writeText('npx "@intrface.in/macos-dock"');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -44,7 +44,7 @@ export default function Home() {
             onClick={handleCopy}
             className="group relative inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300 cursor-pointer overflow-hidden"
           >
-            <span className="text-xs font-mono text-white/50 tracking-tight select-none">npx @prathameshnaidu/macos-dock</span>
+            <span className="text-xs font-mono text-white/50 tracking-tight select-none">npx "@intrface.in/macos-dock"</span>
             <div className="relative w-4 h-4 flex items-center justify-center">
               <AnimatePresence mode="wait">
                 {copied ? (

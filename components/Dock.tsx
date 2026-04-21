@@ -12,14 +12,14 @@ const logAttribution = () => {
 };
 import { motion, useMotionValue, useSpring, useTransform, MotionValue } from 'framer-motion';
 import { 
+  Home,
+  Sparkles,
   AppWindow, 
   Terminal, 
-  MessageSquare, 
-  Music, 
   Settings, 
   Folder, 
   Github, 
-  Twitter,
+  Globe,
   LucideIcon 
 } from 'lucide-react';
 
@@ -38,15 +38,15 @@ type DockItem = DockItemData | SeparatorItem;
 
 // Generic Demo Items
 const DOCK_ITEMS: DockItem[] = [
-  { icon: AppWindow, label: "Finder", href: "#" },
-  { icon: MessageSquare, label: "Messages", href: "#" },
-  { icon: Music, label: "Music", href: "#" },
-  { icon: Terminal, label: "Terminal", href: "#" },
+  { icon: Home, label: "Home", href: "/" },
+  { icon: Sparkles, label: "Features", href: "/features" },
+  { icon: AppWindow, label: "Get Started", href: "/get-started" },
+  { icon: Terminal, label: "AI Help", href: "/terminal" },
   { icon: Settings, label: "Settings", href: "#" },
   { type: "separator" },
   { icon: Folder, label: "Downloads", href: "#" },
-  { icon: Github, label: "GitHub", href: "https://github.com", external: true },
-  { icon: Twitter, label: "Twitter", href: "https://twitter.com", external: true },
+  { icon: Github, label: "GitHub", href: "https://github.com/intrface2026/macos-dock-component", external: true },
+  { icon: Globe, label: "Intrface", href: "https://www.intrface.in", external: true },
 ];
 
 interface DockIconProps {
